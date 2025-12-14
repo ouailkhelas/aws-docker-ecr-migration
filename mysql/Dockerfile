@@ -1,7 +1,3 @@
-FROM node:11-alpine
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY . .
-RUN npm install
-EXPOSE 3000
-CMD ["npm", "run", "start"]
+FROM mysql:8.0.23
+COPY ./my_sql.sql /
+EXPOSE 3306 
